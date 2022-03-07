@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+const { assert } = require("chai");
 const { describe, it } = require("mocha");
 const { lf } = global.lf || require("index.js");
 
