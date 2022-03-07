@@ -15,11 +15,11 @@ var lf = (stringLiterals, ...values) => {
 // Create a tagged template cr`...` that formats text using CR line endings.
 var cr = (stringLiterals, ...values) => {
   return stringLiterals.reduce((res, current, index) =>{
-    let transformedLiteral = transformLineEnding(current, LineEndings.CF);
+    let transformedLiteral = transformLineEnding(current, LineEndings.CR);
     let transformedValue = (values[index] != null ? values[index] : "");
 
     if(!Object.getOwnPropertySymbols(transformedValue).includes(disableConverter)){
-      transformedValue = transformLineEnding(transformedValue, LineEndings.CF);
+      transformedValue = transformLineEnding(transformedValue, LineEndings.CR);
     }
 
     return `${res}${transformedLiteral}${transformedValue}`;
