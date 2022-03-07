@@ -2,7 +2,7 @@
 var lf = (stringLiterals, ...values) => {
   return stringLiterals.reduce((res, current, index) =>{
     let transformedLiteral = transformLineEnding(current, LineEndings.LF);
-    let transformedValue = (values[index] != null ? values[index].toString() : "");
+    let transformedValue = (values[index] != null ? values[index] : "");
 
     if(!Object.getOwnPropertySymbols(transformedValue).includes(disableConverter)){
       transformedValue = transformLineEnding(transformedValue, LineEndings.LF);
@@ -16,7 +16,7 @@ var lf = (stringLiterals, ...values) => {
 var cr = (stringLiterals, ...values) => {
   return stringLiterals.reduce((res, current, index) =>{
     let transformedLiteral = transformLineEnding(current, LineEndings.CF);
-    let transformedValue = (values[index] != null ? values[index].toString() : "");
+    let transformedValue = (values[index] != null ? values[index] : "");
 
     if(!Object.getOwnPropertySymbols(transformedValue).includes(disableConverter)){
       transformedValue = transformLineEnding(transformedValue, LineEndings.CF);
@@ -30,7 +30,7 @@ var cr = (stringLiterals, ...values) => {
 var crlf = (stringLiterals, ...values) => {
   return stringLiterals.reduce((res, current, index) =>{
     let transformedLiteral = transformLineEnding(current, LineEndings.CRLF);
-    let transformedValue = (values[index] != null ? values[index].toString() : "");
+    let transformedValue = (values[index] != null ? values[index] : "");
 
     if(!Object.getOwnPropertySymbols(transformedValue).includes(disableConverter)){
       transformedValue = transformLineEnding(transformedValue, LineEndings.CRLF);
