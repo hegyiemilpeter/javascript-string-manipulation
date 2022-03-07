@@ -8,7 +8,7 @@ var lf = (stringLiterals, ...values) => {
       transformedValue = transformLineEnding(transformedValue, LineEndings.LF);
     }
 
-    return res + transformedLiteral + transformedValue;
+    return `${res}${transformedLiteral}${transformedValue}`;
   },"");
 };
 
@@ -22,7 +22,7 @@ var cr = (stringLiterals, ...values) => {
       transformedValue = transformLineEnding(transformedValue, LineEndings.CF);
     }
 
-    return res + transformedLiteral + transformedValue;
+    return `${res}${transformedLiteral}${transformedValue}`;
   },"");
 };
 
@@ -36,7 +36,7 @@ var crlf = (stringLiterals, ...values) => {
       transformedValue = transformLineEnding(transformedValue, LineEndings.CRLF);
     }
 
-    return res + transformedLiteral + transformedValue;
+    return `${res}${transformedLiteral}${transformedValue}`;
   },"");
 };
 
@@ -78,7 +78,7 @@ const LineEndingReplacements = {
   replaceCRLF: (string, newEnding) => string.replace(/\r\n/g, `${newEnding}`)
 };
 
-const disableConverter = Symbol("crlf-converter-disable");
+const disableConverter = Symbol.for("crlf-converter-disable");
 
 module.exports = {
   lf,
